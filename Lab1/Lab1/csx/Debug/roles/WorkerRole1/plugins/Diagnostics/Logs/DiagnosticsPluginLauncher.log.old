@@ -1,0 +1,15 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Emulator config file set to C:\Users\priyanka\Documents\Visual Studio 2015\Projects\Lab1\Lab1\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] DiagnosticsStoreRootPath set to: C:\Users\priyanka\AppData\Local\dftmp\Resources\7b0ea32b-8dcb-489e-87ed-c217613d2059
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Loading config file: C:\Users\priyanka\Documents\Visual Studio 2015\Projects\Lab1\Lab1\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Config file to read: C:\Users\priyanka\Documents\Visual Studio 2015\Projects\Lab1\Lab1\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Emulator config file set to C:\Users\priyanka\Documents\Visual Studio 2015\Projects\Lab1\Lab1\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [26/05/2017 9:22:47 PM] Resetting DiagnosticPlugin

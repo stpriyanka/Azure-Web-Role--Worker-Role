@@ -1,0 +1,41 @@
+﻿@model WebRole1.Models.Food
+<hr />
+
+<div>
+	<h4>Your Selection</h4>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Size)
+		</dt>
+
+		<dd>
+			@Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Quantity)
+		</dt>
+
+		<dd>
+			@Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.IsFrenchFry)
+		</dt>
+
+		<dd>
+			@Html.EditorFor(model => model.IsFrenchFry, new { htmlAttributes = new { disabled = "disabled" } })
+		</dd>
+
+	</dl>
+</div>
+@*	<input type="submit" value="Confirm Order" />*@
+@*  *@}

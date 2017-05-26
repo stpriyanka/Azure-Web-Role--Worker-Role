@@ -1,0 +1,115 @@
+﻿@model WebRole1.Models.Food
+
+@{
+	ViewBag.Title = "Index";
+}
+
+
+@using (Ajax.BeginForm("SelectedItem", "Home", new AjaxOptions
+{
+	UpdateTargetId = "SelectedItem",
+	HttpMethod = "POST",
+	InsertionMode = InsertionMode.InsertAfter
+}))
+
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<h4>Food</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.DropDownListFor(model => model.Name, new SelectList(new List<string> { "Cheese Burger", "Fish Burger", "Vegetable Burger", "Ham Burger" }),
+			   new { @class = "form-control", @id = "name" })
+				@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				Large:
+				@Html.RadioButtonFor(model => model.Size, "Large", htmlAttributes: new { @id = "size" })
+				Medium:
+				@Html.RadioButtonFor(model => model.Size, "Medium", htmlAttributes: new { @id = "size" })
+				Small:
+				@Html.RadioButtonFor(model => model.Size, "Small", htmlAttributes: new { @id = "size" })
+
+
+				@Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", @id = "quantity" } })
+				@Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.IsFrenchFry, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<div class="checkbox">
+					<input type="checkbox" name="IsFrenchFry" value="true" checked="checked" id="isFrenchFry" } />
+					@Html.ValidationMessageFor(model => model.IsFrenchFry, "", new { @class = "text-danger", @id = "isFrenchFry" })
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" value="Add" class="btn btn-default btn-xs" onclick="cartOperation()"><span class="glyphicon glyphicon-plus-sign"></span></button>
+			</div>
+		</div>
+	</div>
+}
+
+<div id="SelectedItem">
+
+
+</div>
+
+
+@using (Html.BeginForm("ConfirmOrder", "Home"))
+{
+	<input type="hidden" id="list" name="Foods" />
+	<div class="container">
+		<input type="submit" onclick="chkout()" class="btn btn-default btn-lg" value="Confirm" />
+	</div>
+}
+
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<script>
+	var itemlist = [];
+	var cartOperation = function () {
+		var a = document.getElementById("name");
+		var a1 = document.getElementById("size");
+
+		var a2 = document.getElementById("quantity");
+		var a3 = document.getElementById("isFrenchFry");
+		var Food = { Name: a.value, Size: a1.value, Price: 0, isFrenchFry: a3.value, Quantity: a2.value };
+
+		itemlist.push({ Name: a.value, Size: a1.value, Price: 0, isFrenchFry: a3.value, Quantity: a2.value });
+
+		console.log(itemlist);
+	};
+
+	var chkout = function () {
+		document.getElementById("list").value = JSON.stringify(itemlist);
+		console.log(JSON.stringify(itemlist));
+	};
+
+</script>
